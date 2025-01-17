@@ -62,7 +62,7 @@ export const getBooks = (req, res) => {
       (val.title?.toLowerCase().includes(searchParam) || val.author?.toLowerCase().includes(searchParam)) &&
       (!filterStatus || val.status === filterStatus)
   );
-  if (data.length > 0) {
+  if (_data.length > 0) {
     return res.status(200).json(_data);
   } else {
     return res.status(404).json({ message: "Book not exist" });
